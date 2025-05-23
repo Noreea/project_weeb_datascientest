@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 function Header() {
   return (
-    <header className="flex justify-between items-center px-6 py-4 bg-[#0B0B22] text-white shadow-md">
-      <div className="text-xl font-bold">weeb</div>
-      <nav className="flex gap-6 items-center text-sm">
-        <Link to="/" className="hover:underline">Home</Link>
-        <Link to="/contact" className="hover:underline">Contact</Link>
-        <Link to="/login" className="px-4 py-2 bg-purple-600 rounded hover:bg-purple-700">
-          Connexion
-        </Link>
-      </nav>
+    <header className="">
+      <div className="w-full max-w-custom flex items-center justify-between bg-gray_header mx-auto my-6 px-6 py-6 rounded-[20px] shadow-xl">
+
+        {/* Logo */}
+        <div className="flex items-center gap-8">
+          <Link to="/" className="text-[32px] font-bold">weeb</Link>
+          <nav className="hidden sm:flex gap-6 text-sm font-medium">
+            <Link to="/" className="hover:underline text-base font-medium">About Us</Link>
+            <Link to="/contact" className="hover:underline text-base ">Contact</Link>
+          </nav>
+        </div>
+
+        {/* Links */}
+        <div className="flex items-center gap-6">
+          <Link to="/login" className="hover:underline text-base font-medium">Log In</Link>
+          <Button className="px-8">Join Now</Button>
+        </div>
+
+      </div>
     </header>
   );
 }
