@@ -3,9 +3,9 @@ import Button from "../components/Button";
 function Home() {
   return (
     <main className="text-white">
-      <div className="mx-auto px-10 sm:px-12 lg:px-8 py-12 space-y-24">
+      <div className="mx-auto px-6 sm:px-8 lg:px-24 py-12 space-y-24">
         {/* Héros */}
-        <section className="flex flex-col items-center justify-between gap-10 mt-8 mx-24">
+        <section className="flex flex-col items-center justify-between gap-10 mt-8 mx-6 md:mx-12 lg:mx-24">
           {/* Texte */}
           <div className="max-w-7xl flex-1 space-y-6 text-center px-6">
             <h1 className="text-3xl md:text-7xl font-bold leading-tight">
@@ -32,7 +32,7 @@ function Home() {
           <p className="text-3xl text-center pb-8 md:text-5xl font-bold">
             Ils nous font confiance
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-80">
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-80">
             {[
               { src: "/assets/smart_finder.svg", alt: "SmartFinder" },
               { src: "/assets/zoomerr.svg", alt: "Zoomerr" },
@@ -42,7 +42,7 @@ function Home() {
             ].map((logo, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 <img src={logo.src} alt={logo.alt} className="h-8" />
-                <span className="font-semibold text-xl">{logo.alt}</span>
+                <span className="font-semibold text-base md:text-xl">{logo.alt}</span>
               </div>
             ))}
           </div>
@@ -50,14 +50,14 @@ function Home() {
 
         {/* Section Apprenez et progressez */}
         <section>
-          <div className="text-left rounded-xl p-6 sm:p-10 flex flex-col-reverse lg:flex-row items-center gap-10">
+          <div className="rounded-xl p-6 sm:p-10 flex flex-col-reverse lg:flex-row items-center gap-10">
             {/* Texte */}
-            <div className="w-full lg:w-1/2 lg:text-left space-y-4">
-              <p className="text-lg text-left uppercase tracking-widest font-bold">Des ressources pour tous les niveaux</p>
-              <p className="text-3xl text-left md:text-6xl font-bold">
+            <div className="w-full lg:w-1/2 space-y-4">
+              <p className="text-lg uppercase tracking-widest font-bold">Des ressources pour tous les niveaux</p>
+              <p className="text-3xl md:text-6xl font-bold">
                 <span className="text-purple_text">Apprenez</span> et <span className="text-purple_text">progressez</span>
               </p>
-              <p className="text-left">
+              <p>
                 Que vous débutiez en développement web ou que vous soyez un expert cherchant à approfondir vos connaissances,
                 nous vous proposons des tutoriels, guides et bonnes pratiques pour apprendre efficacement.
               </p>
@@ -85,17 +85,17 @@ function Home() {
               <img
                 src="/assets/shapes.svg"
                 alt="Tendances Web"
-                className="w-full max-w-sm"
+                className="w-full max-w-sm mx-auto lg:mx-0"
               />
             </div>
 
             {/* Texte */}
-            <div className="w-full lg:w-1/2 text-left lg:text-left space-y-4">
-              <p className="text-lg uppercase text-left tracking-widest font-bold">Le web, un écosystème en constante évolution</p>
-              <p className="text-3xl text-left pb-8 md:text-6xl font-bold">
+            <div className="w-full lg:w-1/2 space-y-4">
+              <p className="text-lg uppercase tracking-widest font-bold">Le web, un écosystème en constante évolution</p>
+              <p className="text-3xl pb-8 md:text-6xl font-bold">
                 Restez informé des dernières <span className="text-purple_text">tendances</span>
               </p>
-              <p className="text-gray-300 text-left">
+              <p className="text-gray-300">
                 Chaque semaine, nous analysons les nouveautés du web : frameworks émergents, bonnes pratiques SEO, accessibilité, et bien plus encore. Ne manquez aucune actualité du digital !
               </p>
               <a href="#" className="inline-block mt-4 font-semibold hover:underline">
