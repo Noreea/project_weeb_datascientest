@@ -3,6 +3,7 @@ import Button from "./Button";
 import { useState } from "react";
 
 function Header() {
+  // État pour gérer l'ouverture/fermeture du menu mobile
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -16,19 +17,46 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden sm:flex gap-6 text-sm font-medium items-center">
-          <Link to="/" className="hover:underline text-base">About Us</Link>
-          <Link to="/contact" className="hover:underline text-base">Contact</Link>
-          <Link to="/login" className="hover:underline text-base font-medium">Log In</Link>
+          <Link
+            to="/"
+            className="hover:underline text-base text-white hover:text-purple_text transition-colors"
+          >
+            About Us
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:underline text-base text-white hover:text-purple_text transition-colors"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/login"
+            className="hover:underline text-base font-medium text-white hover:text-purple_text transition-colors"
+          >
+            Log In
+          </Link>
           <Button className="px-6">Join Now</Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="sm:hidden bg-purple-600 text-white p-2 rounded-lg"
+          className="sm:hidden bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-lg transition-colors duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle mobile menu"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            className="h-6 w-6"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </div>
@@ -36,10 +64,28 @@ function Header() {
       {/* Mobile Dropdown */}
       {menuOpen && (
         <div className="sm:hidden bg-gray_header px-6 py-4 space-y-2 text-sm font-medium shadow-md rounded-b-xl">
-          <Link to="/" className="block">About Us</Link>
-          <Link to="/contact" className="block">Contact</Link>
-          <Link to="/login" className="block">Log In</Link>
-          <Button className="w-full">Join Now</Button>
+          <Link
+            to="/"
+            className="block text-white hover:text-purple_text transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-white hover:text-purple_text transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </Link>
+          <Link
+            to="/login"
+            className="block text-white hover:text-purple_text transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Log In
+          </Link>
+          <Button className="w-full mt-2">Join Now</Button>
         </div>
       )}
     </header>
